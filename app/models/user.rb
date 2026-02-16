@@ -14,4 +14,18 @@ class User < Model
   def get_file_path
     FILE_PATH
   end
+
+  def self.all
+    begin
+      users = JSON.parse(File.read(FILE_PATH))
+    rescue Errno::ENOENT
+      puts "File #{FILE_PATH} does not exist"
+    else
+      users.each_with_object(Array.new) do |user, arr|
+        user = JSON.parse(user)
+        user = User.new(id: user["id"], name: user["name"])
+        arr << user
+      end
+    end
+  end
 end

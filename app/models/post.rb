@@ -30,4 +30,8 @@ class Post < Model
     end
   end
 
+  def self.find_by_author_id(id:)
+    Post.all.select { |post| post.author_id == id}
+  end
+
 end
