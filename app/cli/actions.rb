@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'console'
+require_relative 'menu'
 require_relative '../models/user'
 require_relative '../models/post'
 
 
 # Users
-
 def create_user
   id = User.all.length
   name = Console.get_input ">name: "
@@ -43,4 +43,21 @@ def find_posts_by_author_id
 end
 
 # actions
+MAIN_MENU_ACTIONS = {
+  1 => -> (menu) { menu.switch_menu(target_menu: :user_actions) },
+  2 => -> (menu) { menu.switch_menu(target_menu: :post_actions) },
+  3 => -> { exit }
+}
 
+USER_ACTIONS = {
+  1 => -> { create_user },
+  2 => -> { list_users },
+  3 => -> (menu) { menu.switch_menu(target_menu: :main_menu) }
+}
+
+POST_ACTIONS = {
+  1 => -> { create_post },
+  2 => -> { list_posts },
+  3 => -> { find_posts_by_author_id },
+  4 => -> (menu) { menu.switch_menu(target_menu: :main_menu) }
+}

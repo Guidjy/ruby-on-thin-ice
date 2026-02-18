@@ -6,3 +6,4 @@ application supports:
 - Listing posts
 - Filtering posts by author
 - Data persistence
+- CLI for viewing and executing queries
