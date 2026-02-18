@@ -3,7 +3,7 @@ a simple command-line blog engine made to get comfortable with the ruby lang bef
 application supports:
 
 - Creating users and posts
-- Listing posts
+- Listing users and posts
 - Filtering posts by author
 - Data persistence
 - CLI for viewing and executing queries
