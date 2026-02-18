@@ -1,5 +1,5 @@
 # ruby-on-thin-ice
-a simple command-line blog engine made to get comfortable with the ruby lang before going balls deep in rails. This
+A simple command-line blog engine made to get comfortable with the ruby lang before going balls deep in rails. This
 application supports:
 
 - Creating users and posts
